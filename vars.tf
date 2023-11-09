@@ -1,1 +1,1 @@
-variable "dev" {}
+variable "env" {}
