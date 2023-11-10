@@ -1,11 +1,23 @@
-module "network" {
+module "vpc" {
   source = "github.com/Paparao-Karlapudi/tf-module-vpc"
   env = var.env
   default_vpc_id = var.default_vpc_id
 
   for_each = var.vpc
   cidr_block           = each.value.cidr_block
-  public_subnets_cidr  = each.value.public_subnets_cidr
-  private_subnets_cidr = each.value.private_subnets_cidr
-  availability_zones   = each.value.availability_zones
+}
+
+module "subnets" {
+  source = "github.com/Paparao-Karlapudi/tf-module-subnets"
+  env = var.env
+  default_vpc_id = var.default_vpc_id
+
+
+
+  for_each   = var.subnets
+  cidr_block = each.value.cidr_block
+  availability_zone = each.value.availability_zone
+  name = each.value.name
+  vpc_id = lookup(lookup(module.vpc, "main" , null ), "vpc_id" , null)
+  vpc_peering_connection_id = lookup(lookup(module.vpc, "main" , null ), "vpc_peering_connection_id" , null)
 }
