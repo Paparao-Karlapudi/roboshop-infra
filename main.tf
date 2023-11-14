@@ -7,6 +7,7 @@ module "vpc" {
   cidr_block  = each.value.cidr_block
   subnets     = each.value.subnets
   availability_zone = each.value.availability_zone
+  tags              = merge (local.common_tags, { Name = "${var.env}-vpc" } )
 }
 
 module "subnets" {
