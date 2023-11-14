@@ -13,14 +13,14 @@ vpc = {
       }
 
       web = {
-        name              = "public"
+        name              = "web"
         cidr_block        = ["10.0.2.0/24" , "10.0.3.0/24"]
         nat_gw            = "true"
 
       }
 
       app = {
-        name              = "public"
+        name              = "app"
         cidr_block        = ["10.0.4.0/24" , "10.0.5.0/24"]
         nat_gw            = "true"
 
@@ -28,7 +28,7 @@ vpc = {
       }
 
       db = {
-        name              = "public"
+        name              = "db"
         cidr_block        = ["10.0.6.0/24" , "10.0.7.0/24"]
         nat_gw            = "true"
 
