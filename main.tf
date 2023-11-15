@@ -90,5 +90,6 @@ module "apps" {
   min_size                  = each.value.min_size
   health_check_grace_period = each.value.health_check_grace_period
   instance_type = each.value.instance_type
+  bastion_cidr  = var.bastion_cidr
 }
 
