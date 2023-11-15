@@ -53,3 +53,27 @@ docdb = {
   }
 }
 
+rds = {
+  main = {
+    vpc_name       = "main"
+    subnets_name   = "db"
+    engine         = "aurora-mysql"
+    engine_version = "5.7.mysql_aurora.2.11.1"
+    number_of_instances = 1
+    instance_class      = "db.t3.micro"
+  }
+}
+
+
+elasticache = {
+  main = {
+    vpc_name       = "main"
+    subnets_name   = "db"
+    engine         = "redis"
+    num_node_groups         = 2
+    replicas_per_node_group = 1
+    node_type       = "cache.t3.micro"
+
+  }
+}
+
