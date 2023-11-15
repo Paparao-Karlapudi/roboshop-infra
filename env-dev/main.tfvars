@@ -76,3 +76,32 @@ elasticache = {
   }
 }
 
+rabbitmq = {
+  main = {
+    vpc_name = "main"
+    subnets_name = "db"
+    engine_type = "RabbitMQ"
+    engine_version = "3.10.10"
+    host_instance_type = "mq.t3.micro"
+    deployment_mode    = "SINGLE_INSTANCE"
+  }
+}
+
+alb = {
+  public = {
+    vpc_name     = "main"
+    subnets_name = "db"
+    subnets_type  = "public_subnets"
+    subnets_name = "public"
+
+  }
+
+  private = {
+    vpc_name = "main"
+    subnets_name = "db"
+    subnets_type  = "private_subnets"
+    subnets_name = "app"
+
+  }
+}
+
