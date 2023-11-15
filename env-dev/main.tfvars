@@ -107,3 +107,31 @@ alb = {
   }
 }
 
+apps = {
+  frontned = {
+    component = "frontend"
+    vpc_name = "main"
+    allow_cidr_subnets_type = "public_subnet_ids"
+    allow_cidr_subnets_name = "public"
+    subnets_type = "private_subnet_ids"
+    subnets_name = "web"
+    app_port     = 80
+    max_size                  = 2
+    min_size                  = 1
+    health_check_grace_period = 1
+    instance_type    = "t3.micro"
+  }
+  catalogue = {
+    component = "catalogue"
+    vpc_name = "main"
+    allow_cidr_subnets_type = "private_subnet_ids"
+    allow_cidr_subnets_name = "app"
+    subnets_type = "private_subnet_ids"
+    subnets_name = "app"
+    app_port     = 8080
+    max_size                  = 2
+    min_size                  = 1
+    health_check_grace_period = 1
+    instance_type   = "t3.micro"
+  }
+}
