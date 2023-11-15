@@ -72,4 +72,5 @@ module "alb" {
   subnet_ids = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), each.value.subnets_type, null), each.value.subnets_name, null), "subnet_ids", null)
   vpc_id     = lookup(lookup(module.vpc, each.value.vpc_name, null ), "vpc_id", null )
   subnets_name = each.value.subnets_name
+  internal     = each.value.internal
 }
