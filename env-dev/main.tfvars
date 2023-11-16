@@ -133,4 +133,56 @@ apps = {
     health_check_grace_period = 1
     instance_type   = "t3.micro"
   }
+  user = {
+    component = "user"
+    vpc_name = "main"
+    allow_cidr_subnets_type = "private_subnet_ids"
+    allow_cidr_subnets_name = "app"
+    subnets_type = "private_subnet_ids"
+    subnets_name = "app"
+    app_port     = 8080
+    max_size                  = 2
+    min_size                  = 1
+    health_check_grace_period = 1
+    instance_type   = "t3.micro"
+  }
+  cart = {
+    component = "cart"
+    vpc_name = "main"
+    allow_cidr_subnets_type = "private_subnet_ids"
+    allow_cidr_subnets_name = "app"
+    subnets_type = "private_subnet_ids"
+    subnets_name = "app"
+    app_port     = 8080
+    max_size                  = 2
+    min_size                  = 1
+    health_check_grace_period = 1
+    instance_type   = "t3.micro"
+  }
+  shipping = {
+    component = "shipping"
+    vpc_name = "main"
+    allow_cidr_subnets_type = "private_subnet_ids"
+    allow_cidr_subnets_name = "app"
+    subnets_type = "private_subnet_ids"
+    subnets_name = "app"
+    app_port     = 8080
+    max_size                  = 2
+    min_size                  = 1
+    health_check_grace_period = 1
+    instance_type   = "t3.micro"
+  }
+  payment = {
+    component = "payment"
+    vpc_name = "main"
+    allow_cidr_subnets_type = "private_subnet_ids"
+    allow_cidr_subnets_name = "app"
+    subnets_type = "private_subnet_ids"
+    subnets_name = "app"
+    app_port     = 8080
+    max_size                  = 2
+    min_size                  = 1
+    health_check_grace_period = 1
+    instance_type   = "t3.micro"
+  }
 }
